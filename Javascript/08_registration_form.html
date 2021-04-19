@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        .button {
+            /* it is used to center the button */
+            text-align: center;
+        }
+        
+        label:hover {
+            cursor: pointer;
+        }
+        
+        .col-sm-4 {
+            margin-top: 50px;
+            background-color: #f7f7f7;
+            border-radius: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- ml-auto mr-auto is used for giving left and right margin -->
+        <div class="row ml-auto mr-auto">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <form name="regform" action="">
+                    <br>
+                    <div class="form-group">
+                        <label for="firstName">First Name :</label>
+                        <input type="text" placeholder="First Name" id="firstName" class="form-control">
+                        <span id="fname_error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name :</label>
+                        <input type="text" placeholder="Last Name" id="lastName" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email :</label>
+                        <input type="email" placeholder="Email" id="email" class="form-control">
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="passoutYear">Passout Year :</label>
+                        <input type="number" placeholder="Passout Year" id="passoutYear" class="form-control">
+                    </div> -->
+
+                    <!-- <label for="passoutYear">Passout Year :</label>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><label
+                                id="year">Year</label>
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" onclick="replace()">2017</a></li>
+                            <li><a href="#">2018</a></li>
+                            <li><a href="#">2019</a></li>
+                            <li><a href="#">2020</a></li>
+                            <li><a href="#">2021</a></li>
+                        </ul>
+                    </div> -->
+                    <div class="form-group">
+                        <!-- Here &nbsp; is used for giving space in html &nbsp;=regular space -->
+                        <label for="passoutYear">Passout Year :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+                        <select name="Passout Year" id="year" required>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Address :</label>
+                        <textarea rows="5" cols="10" type="text" placeholder="Address" id="address" class="form-control"></textarea>
+                        <div id="errors">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd ">Password :</label>
+                        <input type="password" placeholder="Password" id="pwd" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword ">Confirm Password :</label>
+                        <input type="password" placeholder="Confirm Password" id="confirmPassword" class="form-control">
+                    </div>
+                    <br>
+                    <div class="button" onclick="">
+                        <button class="btn btn-primary button" type="submit" onclick="errorMessage()">Submit</button>
+                    </div>
+
+                    <br>
+                </form>
+            </div>
+            <div class=" col-sm-4 ">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    function errorMessage() {
+        var fname = document.regform.firstName.value;
+        var lname = document.regform.lastName.value;
+        var address = document.getElementById('address').value;
+        var pwd = document.getElementById('pwd').value;
+        var cpwd = document.getElementById('confirmPassword').value;
+
+        if (fname.length > 2 && fname.length < 8) {
+            fname = firstName;
+        } else {
+            alert("First Name should be between characters 3 and 8");
+        }
+        if (lname.length > 2 && lname.length < 8) {
+            lname = lastName;
+        } else {
+            alert("Last Name should be between characters 3 and 8");
+        }
+        if (address.length > 100) {
+            alert("address length should be between 100 charachers.");
+        }
+        if (pwd == cpwd) {
+            alert("password matched");
+        } else {
+            alert("password should be matched.")
+        }
+    }
+</script>
+
+</html>

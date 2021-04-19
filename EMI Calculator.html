@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.anychart.com/js/8.0.1/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/js/8.0.1/anychart-pie.min.js"></script>
+
+
+    <style>
+        #heading_emi {
+            margin-top: 50px;
+        }
+        
+        .button {
+            /* it is used to center the button */
+            text-align: center;
+        }
+        
+        .btn:hover {
+            opacity: 0.7;
+        }
+        
+        #main_div {
+            padding-right: 80px;
+            padding-left: 80px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid;
+            border-color: #b1b3b9;
+        }
+        
+        .col-sm-4 {
+            background-color: #fdfdfd;
+            padding: 0px;
+        }
+        
+        #div1 {
+            padding-left: 0px;
+            border-top: 1px solid;
+            border-color: #b1b3b9;
+        }
+        
+        #div2 {
+            border-top: 1px solid;
+            border-right: 1px solid;
+            border-color: #b1b3b9;
+        }
+        
+        #div3 {
+            border-top: 1px solid;
+            border-right: 1px solid;
+            border-color: #b1b3b9;
+        }
+        
+        label {
+            font-weight: 500;
+        }
+        
+        .input-container {
+            display: flex;
+            width: 100%;
+        }
+        
+        .icon {
+            padding: 10px;
+            background: #b1b3b9;
+            color: #353b48;
+            min-width: 50px;
+            text-align: center;
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            outline: none;
+        }
+        
+        .last-input-field {
+            width: 68%;
+            padding: 10px;
+            margin-right: 10px;
+            outline: none;
+        }
+        
+        .btn {
+            font-weight: 500;
+            border-radius: none;
+            background-color: rgb(48, 182, 182);
+            border: none;
+            /* padding: 20px; */
+        }
+        
+        #year {
+            border-radius: 0%;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            border: none;
+        }
+        
+        #month {
+            border-radius: 0%;
+            border: none;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .last-input-field:focus,
+        .input-field:focus {
+            border: 1px solid #1aaee8;
+        }
+        
+        h5,
+        h4 {
+            color: grey;
+            display: flex;
+            justify-content: center;
+        }
+        
+        #div4 {
+            border-bottom: 1px dotted grey;
+            text-align: center;
+            padding: 30px;
+        }
+        
+        #div5 {
+            border-bottom: 1px dotted grey;
+            text-align: center;
+            padding: 30px;
+        }
+        
+        #div6 {
+            /* border-bottom: 1px dotted grey; */
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .fa {
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid" id="main_div">
+        <h2 style="color: grey;font-family: 'muli', sans-serif;" id="heading_emi">EMI Calculator
+        </h2>
+
+        <div class="row">
+            <div class="col-sm-4" id="div1">
+                <!-- <h2 style="color: rgb(82, 82, 82);font-family: 'muli', sans-serif;">EMI Calculator</h2> -->
+                <div class="container-fluid" style="background-color:#353b48f0;color: #fff;border-top: 1px solid;justify-content: center; border-color: #b1b3b9;height: 50px;display: flex;">
+                    <h3 class="my-auto" style="text-align: center;display: inline-block;">EMI Calculator</h3>
+                </div>
+                <div class="container" style="background-color: #ececec;padding-bottom: 50px;;">
+                    <label>Loan Amount</label>
+                    <br>
+                    <div class="input-container">
+                        <i class="fa fa-inr icon" style="font-size:24px;"></i>
+                        <input class="input-field" type="currency" placeholder="Loan Amount" id="loan_amount">
+                    </div>
+                    <br>
+                    <label>Intrest Rate</label>
+                    <br>
+                    <div class="input-container">
+                        <i class="fa fa-percent icon" style="font-size:20px;"></i>
+                        <input class="input-field" type="currency" placeholder="Interest Rate" id="interest_rate">
+                    </div>
+                    <br>
+                    <label>Loan Tenure</label>
+                    <br>
+                    <div class="input-container">
+                        <i class="fa fa-clock-o icon" style="font-size:24px;"></i>
+                        <input class="last-input-field" type="currency" placeholder="Loan Tenure" id="loan_tenure">
+                        <button class="btn btn-primary button" id="year" type="" style="background-color: #194c8f;" onclick="clickEvent()">Y r</button>
+                        <button class="btn btn-primary button" id="month" type="" style="background-color: #1a73e8;" onclick="clickEvent2()">Mo</button>
+                        <br><br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4" id="div2">
+                <div class="container-fluid" id="div4">
+                    <h5>Loan EMI</h5>
+                    <i class="fa fa-inr" id="loan_EMI">
+                        <!-- <p id="loan_EMI"></p> -->
+                    </i>
+
+                </div>
+                <div class="container-fluid" id="div5">
+                    <h5>Total Interest Payble</h5>
+
+                    <i class="fa fa-inr " style="font-size:24px;" id="total_interest_payable"> </i>
+
+                </div>
+                <div class="container-fluid" id="div6">
+                    <h5>Total Payments</h5>
+                    <h5>( Principal + Interest )</h5>
+
+                    <strong><i class="fa fa-inr " style="font-size:24px;" id="total_payment"></i></strong>
+
+                </div>
+            </div>
+            <div class="col-sm-4" id="div3" style="overflow: hidden;">
+
+            </div>
+        </div>
+    </div>
+    <div class="containter-fluid" style="margin-top: 20px;">
+        <h4 id="h4tag">To Enquire about Home Loans</h4>
+        <div class="button" onclick="">
+            <button id="mainBtn" class="btn btn-primary button" type="submit" style="padding: 20px;" onclick="myFunction()">Click
+                Here</button>
+            <p id=ouput></p>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function() {
+        $("#loan_EMI").css("font-size", "24px", )
+        $("#loan_EMI").css("font-weight", "600", )
+        $("#total_interest_payable").css("font-size", "24px", )
+        $("#total_interest_payable").css("font-weight", "600", )
+        $("#total_payment").css("font-size", "24px", )
+        $("#total_payment").css("font-weight", "600", )
+    });
+
+    function clickEvent() {
+        document.getElementById("year").style.background = "#194c8f"; //selected
+        document.getElementById("month").style.background = "#1a73e8";
+    };
+
+    function clickEvent2() {
+        document.getElementById("month").style.background = "#194c8f";
+        document.getElementById("year").style.background = "#1a73e8";
+    };
+
+    // Formula for Home Loan EMI Calculation:EMI = [P x R x (1+R)^N]/[(1+R)^N-1]
+    function myFunction() {
+        var P = document.getElementById("loan_amount").value;
+        var interest_rate = document.getElementById("interest_rate").value;
+        var loan_tenure = document.getElementById("loan_tenure").value;
+        var R = interest_rate / 1200;
+
+        var N;
+
+        // if (document.getElementById("year").style.backgroundColor === "rgb(25, 76, 143)") {
+        //     alert("true");
+        // }
+
+        if (document.getElementById("year").style.backgroundColor == "rgb(25, 76, 143)") {
+            var year = loan_tenure;
+            N = year * 12;
+            // alert(N);
+        } else if (document.getElementById("month").style.backgroundColor == "rgb(25, 76, 143)") {
+            var month = loan_tenure;
+            N = month;
+            // alert(N);
+        }
+
+        var power = Math.pow((1 + R), N);
+        var power2 = (power - 1);
+        var power3 = power / power2;
+        var tempEMI = P * R * power3;
+
+        var EMI = tempEMI.toFixed(0);
+
+        var total_interest_payable = (tempEMI * N) - P;
+        var total_payment = (tempEMI * N);
+
+        document.getElementById("loan_EMI").innerHTML = EMI;
+        document.getElementById("total_interest_payable").innerHTML = total_interest_payable.toFixed(0);
+        document.getElementById("total_payment").innerHTML = total_payment.toFixed(0);
+
+        //for Pi Chart
+        var data = [{
+            x: "Principal Loan Amount",
+            value: P
+        }, {
+            x: "Total Interest",
+            value: total_interest_payable
+        }];
+
+        // create the chart
+        var chart = anychart.pie();
+
+        // set the chart title
+        chart.title("Break-up of Total Payment");
+
+        // add the data
+        chart.data(data);
+
+        // display the chart in the container
+        chart.container('div3');
+        chart.draw();
+    };
+</script>
+
+</html>

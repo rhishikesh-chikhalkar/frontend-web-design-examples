@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empty</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <p>Welcome</p>
+</body>
+
+<script>
+    i = 0;
+    $(document).ready(function() {
+
+        $("p").mouseover(function() {
+            $("p").css("background-color", "red");
+        });
+        $("p").mouseout(function() {
+            $("p").css("background-color", "#fff");
+        });
+        $("p").mousedown(function() {
+            $("p").css("background-color", "orange");
+        });
+    });
+</script>
+
+</html>

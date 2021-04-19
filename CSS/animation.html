@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        div {
+            height: 100px;
+            width: 100px;
+            background-color: violet;
+            position: absolute;
+            animation: myfunction 5s;
+        }
+        
+        @keyframes myfunction {
+            0% {
+                top: 0px;
+                left: 0px;
+            }
+            25% {
+                background-color: blue;
+                top: 0px;
+                left: 300px;
+            }
+            50% {
+                background-color: orange;
+                top: 100px;
+                left: 300px;
+            }
+            75% {
+                background-color: green;
+                top: 100px;
+                left: 0px;
+            }
+            100% {
+                top: 0px;
+                left: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

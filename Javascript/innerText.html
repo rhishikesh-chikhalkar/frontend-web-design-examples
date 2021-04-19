@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="name" id="name" onkeyup="validate()">
+    <span id="error1" style="color: green;"></span>
+    <span id="error2" style="color: red;"></span>
+</body>
+<script type="text/javascript">
+    function validate() {
+        var name = document.getElementById('name').value;
+        var msg1 = "";
+        var msg2 = "";
+        if (name.length > 3) {
+            msg1 = "correct"
+        } else {
+            msg2 = "poor"
+        }
+        document.getElementById('error1').innerText = msg1;
+        document.getElementById('error2').innerText = msg2;
+    }
+</script>
+
+</html>

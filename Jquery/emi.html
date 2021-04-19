@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <style>
+        #heading_emi {
+            margin-top: 50px;
+        }
+        
+        #main_div {
+            padding-right: 80px;
+            padding-left: 80px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid;
+            border-color: #b1b3b9;
+        }
+        
+        .col-sm-4 {
+            background-color: #fdfdfd;
+        }
+        
+        #div1 {
+            padding-left: 0px;
+            border-top: 1px solid;
+            border-color: #b1b3b9;
+        }
+        
+        #div2 {
+            border-top: 1px solid;
+            border-right: 1px solid;
+            border-color: #b1b3b9;
+        }
+        
+        #div3 {
+            border-top: 1px solid;
+            border-right: 1px solid;
+            border-color: #b1b3b9;
+        }
+        
+        label {
+            font-weight: 500;
+        }
+        
+        .input-container {
+            display: flex;
+            width: 100%;
+        }
+        
+        .icon {
+            padding: 10px;
+            background: #b1b3b9;
+            color: #353b48;
+            min-width: 50px;
+            text-align: center;
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            outline: none;
+        }
+        
+        .last-input-field {
+            width: 68%;
+            padding: 10px;
+            margin-right: 10px;
+            outline: none;
+        }
+        
+        .btn {
+            font-weight: 500;
+            border-radius: none;
+        }
+        
+        #year {
+            background-color: #194c8f;
+            border-radius: 0%;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            border: none;
+        }
+        
+        #month {
+            background-color: #1a73e8;
+            border-radius: 0%;
+            border: none;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .input-field:focus {
+            border: 1px solid #353b48;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid" id="main_div">
+        <h2 style="color: grey;font-family: 'muli', sans-serif;" id="heading_emi">EMI Calculator
+        </h2>
+
+        <div class="row">
+            <div class="col-sm-4" id="div1">
+                <!-- <h2 style="color: rgb(82, 82, 82);font-family: 'muli', sans-serif;">EMI Calculator</h2> -->
+                <div class="container-fluid" style="background-color:#353b48f0;color: #fff;border-top: 1px solid;justify-content: center; border-color: #b1b3b9;height: 50px;display: flex;">
+                    <h3 class="my-auto" style="text-align: center;display: inline-block;">EMI Calculator</h3>
+                </div>
+                <div class="container" style="background-color: #ececec;">
+                    <label>Loan Amount</label>
+                    <br>
+                    <div class="input-container">
+                        <i class="fa fa-inr icon" style="font-size:24px;"></i>
+                        <input class="input-field" type="number" placeholder="Loan Amount" name="loan_amount">
+                    </div>
+                    <br>
+                    <label>Intrest Rate</label>
+                    <br>
+                    <div class="input-container">
+                        <i class="fa fa-percent icon" style="font-size:24px;"></i>
+                        <input class="input-field" type="number" placeholder="Interest Rate" name="interest_rate">
+                    </div>
+                    <br>
+                    <label>Loan Tenure</label>
+                    <br>
+                    <div class="input-container">
+                        <i class="fa fa-clock-o icon" style="font-size:24px;"></i>
+                        <input class="last-input-field" type="number" placeholder="Loan Tenure" name="loan_tenure">
+                        <button class="btn btn-primary button" id="year" type="">Y r</button>
+                        <button class="btn btn-primary button" id="month" type="">Mo</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4" id="div2">
+                2
+            </div>
+            <div class="col-sm-4" id="div3">
+                3
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+</script>
+
+</html>
